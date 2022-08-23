@@ -13,6 +13,8 @@ router.get("/", ensureGuest, (req, res) => {
 //@ route GET/
 
 router.get("/dashboard", ensureAuth, (req, res) => {
-  res.render("dashboard"); // always name this in lower case
+  res.render("dashboard", {
+    name: req.user,
+  }); // always name this in lower case
 });
 module.exports = router;
