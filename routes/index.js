@@ -28,6 +28,7 @@ router.get("/dashboard", ensureAuth, async (req, res) => {
     }); // always name this in lower case
   } catch (err) {
     console.log(err);
+    res.render("error/500");
   }
 });
 
